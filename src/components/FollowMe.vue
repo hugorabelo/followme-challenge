@@ -58,12 +58,12 @@ export default {
         changeToWhite() {
             this.interval = setInterval(() => {
                 let currentSquareId =  this.clickedSquares.pop()
-                this.squares.find(square => square.id == currentSquareId).clicked = false
+                let currentSquare = this.squares.find(square => square.id == currentSquareId)
+                currentSquare.clicked = false
                 if(this.clickedSquares.length == 0) {
                     clearInterval(this.interval);
                 }
-            }, 1000);
-
+            }, 700);
         }
     }
 }
